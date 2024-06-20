@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coffee Days</title>
+    <link rel="stylesheet" href="GioHang.css">
+
+</head>
+<body>
+    <header>
+        <h1>The Coffee Days</h1>
+    </header>
+    <nav class="Menu">
+        <a href="#">Cà phê</a>
+        <a href="#">Trà</a>
+        <a href="#">Menu</a>
+        <a href="#">Chuyện nhà</a>
+        <a href="#">Cảm hứng</a>
+        <a href="#">Giỏ hàng</a>
+        <input type="text" placeholder="Tìm kiếm">
+        <button>Tìm kiếm</button>
+    </nav>
+    <hr>
+    <main>
+        <section>
+            <h2>Giao Hàng</h2>
+            <div>
+                <span class="cart-icon">&#128204;</span> Khu 5, Thôn Do Hạ, Xã Tiền Phong, Huyện Mê Linh, Thành Phố Hà Nội
+                <button>Đổi địa chỉ</button>
+            </div>
+            <p>Nhận hàng trong 15-30 phút</p>
+            <div class="GiaoHang">
+                
+                <input type="text" placeholder="Nhập tên người nhận...">
+                <input type="text" placeholder="Nhập số điện thoại...">
+                <input type="text" placeholder="Thêm ghi chú giao hàng...">
+            </div>
+            <h2>Phương Thức Thanh Toán</h2>
+            <div class="payment-options">
+                <div class="payment-option">
+                    <input type="radio" name="payment" checked>
+                    <img src="../CODE/Anh/tienmat.png" alt="Tiền mặt">
+                    Tiền mặt
+                </div>
+                <div class="payment-option">
+                    <input type="radio" name="payment">
+                    <img src="../CODE/Anh/momo.png" alt="MoMo">
+                    MoMo
+                </div>
+                <div class="payment-option">
+                    <input type="radio" name="payment">
+                    <img src="../CODE/Anh/zalopay.png" alt="ZaloPay">
+                    ZaloPay
+                </div>
+                <div class="payment-option">
+                    <input type="radio" name="payment">
+                    <img src="../CODE/Anh/thetindung.png" alt="Thẻ ngân hàng">
+                    Thẻ ngân hàng
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="Order_trai">
+                <h2>Các món đã chọn</h2>
+                <div class="order-item">
+                    <img src="../CODE/Anh/trasuadau.png" alt="Dâu sữa phô mai">
+                    <div class="details">
+                        <p>1x Dâu Sữa Phô Mai Tươi</p>
+                        <p>Trân châu đen</p>
+                        <p>50% đá 70% đường</p>
+                    </div>
+                    <div class="price">
+                        45.000₫
+                    </div>
+                    <span class="edit-icon">&#128221;</span>
+                </div>
+                <div class="order-item">
+                    <img src="../CODE/Anh/trasuamangcau.png"alt="Mãng cầu phô mai">
+                    <div class="details">
+                        <p>2x Mãng Cầu Phô Mai Tươi</p>
+                        <p>Trân châu đen</p>
+                        <p>50% đá 70% đường</p>
+                    </div>
+                    <div class="price">
+                        90.000₫
+                    </div>
+                    <span class="edit-icon">&#128221;</span>
+                </div>
+                <div class="total">
+                    <h3>Tổng Cộng</h3>
+                    <p class="price">135.000₫</p>
+                    <p>Phí giao hàng: 23.000₫</p>
+                    <p class="price">158.000₫</p>
+                    <button class="btn-order" onclick="openModal()">ĐẶT HÀNG</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>XÁC NHẬN ĐƠN HÀNG</h2>
+                <p>Địa Chỉ Nhận : Khu 5, Thôn Do Hạ, Xã Tiền Phong,
+                    Huyện Mê Linh, Thành Phố Hà Nội</p>
+                <p>Phương Thức Thanh Toán: MOMO</p>
+                <button class="btn-order" onclick="confirmOrder()">XÁC NHẬN</button>
+                <button class="btn-order2" onclick="closeModal()">THAY ĐỔI THÔNG TIN</button>
+            </div>
+        </div>
+        
+        <script>
+            function openModal() {
+                document.getElementById("myModal").style.display = "block";
+            }
+        
+            function closeModal() {
+                document.getElementById("myModal").style.display = "none";
+            }
+        
+            function confirmOrder() {
+                // Close the modal
+                closeModal();
+        
+                // Open a new webpage
+                window.open('../CODE/congthanhtoan.html', '_blank');
+            }
+        </script>
+    </main>
+</body>
+</html>
